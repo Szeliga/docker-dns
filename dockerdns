@@ -87,7 +87,7 @@ class NameTable(object):
         if key:
             with self._lock:
                 log('table.add %s -> %s', name, addr)
-                self._storage[key].add(addr)
+                self._storage[key].add('*.' + addr)
 
     def get(self, name):
         key = self._key(name)
